@@ -1,0 +1,117 @@
+
+#Pregunta 1
+10000%%3
+## 1 es el residuo que nos da al repartir 10000/3
+
+#Pregunta 2
+4560%%3
+## El número 4560 es divisible por 3 ya que el residuo es 0.
+
+#Pregunta 3
+v1 <- c(2:87)
+x<- v1%%7
+x[x==0]
+## nos sale que son 12 números divisibles por 7 ya que su residuo es 0.
+
+#Pregunta 4
+a1 <- c(7:3)
+b2 <- c(seq(from=5, to=25, by=5))
+A <- ifelse(a1%%2==0,"TRUE","FALSE")
+B <- ifelse(b2>10,"TRUE","FALSE")
+data.frame(A,B)
+## el vector A y B cumplen las condiciones en la posición 4.
+
+#PREGUNTA 5
+x <- (1:100)
+sum(1:100)
+## la suma es 5050
+
+#PREGUNTA 6
+x5 <- c(1,-4,4,9,-4)
+min(x5)
+nivel <- c(1,-4,4,9,-4)
+nivel[2]
+nivel[5]
+ifelse(x5==min(x5),"VMIN","OTRO")
+### las posiciones donde están el valor mínimo son 2 y 5.
+
+# PREGUNTA 7
+factorial(8)
+prod(1:8)
+## Rpta:40320
+
+# PREGUNTA 8
+i<- 3:7
+sum(exp(i))
+## Rpta:1723.159
+
+# PREGUNTA 9
+i<-1:10
+prod(log(sqrt(i)))
+## Rpta:0
+
+#PREGUNTA 10
+R=25
+teta= pi/36 
+d=R/2
+ar1 <- function(R,teta){
+  result <- (((pi*(R^2))*teta)/360)
+  return(result)
+}
+area1 <- ar1(25,pi/36)
+area1
+ar2 <- function(d,R){
+  result2 <- (sqrt(R^2 - d^2))
+  return(result2)
+}
+area2 <-ar2(d,R)
+area2
+ar_final <- area1 - area2
+ar_final
+
+# PREGUNTA 11
+a<- 1:10
+b<- 10:1
+v_c<- c(21, 30, 22, 17, 18, 16)
+rev(v_c)
+
+# PREGUNTA 12
+i<- 10:100
+sum(i^3+ 4*i^2)
+## Rpta:26852735
+
+# PREGUNTA 13
+i<- 1:25
+sum(2^i/i +3^i/i^2)
+## Rpta:2129170437
+
+#PREGUNTA 14
+d_f<-read.csv("https://raw.githubusercontent.com/fhernanb/datos/master/Paises.txt",sep="",dec=".")
+
+length(d_f)
+## el número de variables es 5
+
+length(d_f[,1])
+## hay 107 países
+
+d_f[d_f$poblacion==max(d_f[,2]),]
+##el país con mayor población es China
+
+d_f[d_f$alfabetizacion==min(d_f[,3]),]
+##el país con mayor alfabetización es Burkina_ Faso
+
+#PREGUNTA 15
+
+df<-mtcars
+df[df$mpg<18.0,]
+
+df[df$cyl==4,]
+
+df[df$wt>2.500&df$am==1,]
+
+#PREGUNTA 16
+
+x<-0:365
+y<-pi*2*(x-81)/365
+funcion<-9.87*sin(2*y)-7.35*cos(y)-1.5*sin(y)
+plot(funcion)
